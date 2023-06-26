@@ -1,0 +1,35 @@
+# version: '3'
+# services:
+#   db:
+#     image: postgres
+#     environment:
+#       POSTGRES_USER: 'huor'
+#       POSTGRES_DB: 'test_db'
+#       POSTGRES_PASSWORD: 'huor1234'
+#   app:
+#     image: test
+#     ports:
+#       - 3300:3000
+
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: 'huor'
+      POSTGRES_DB: 'test_db'
+      POSTGRES_PASSWORD: 'huor1234'
+      
+  app:
+    image: test
+    ports:
+      - "3300:3000"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "2000:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'sunlyhuor@huorclass.com'
+      PGADMIN_DEFAULT_PASSWORD: 'Huor1234'
