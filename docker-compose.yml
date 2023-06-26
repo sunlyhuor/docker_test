@@ -20,6 +20,7 @@ services:
       POSTGRES_USER: 'huor'
       POSTGRES_DB: 'test_db'
       POSTGRES_PASSWORD: 'huor1234'
+      POSTGRES_HOST: db
       
   app:
     image: test
