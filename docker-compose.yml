@@ -16,22 +16,20 @@ version: '3'
 services:
   db:
     image: postgres
+    restart: always
     environment:
       POSTGRES_USER: 'huor'
       POSTGRES_DB: 'test_db'
       POSTGRES_PASSWORD: 'huor1234'
-      POSTGRES_HOST: db
-      volumes:
-        - db-data:/var/postgresql/data
+    volumes:
+        - ./data:/var/postgresql/data
+    ports:
+      - "5432:5432"
       
   app:
-    image: test
+    build: .
     ports:
       - "3300:3000"
-    depends_on:
-      - db
-  volumes:
-    db-data:
   # pgadmin:
   #   image: dpage/pgadmin4
   #   ports:
