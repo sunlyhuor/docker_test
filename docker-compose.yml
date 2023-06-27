@@ -28,6 +28,8 @@ services:
     image: test
     ports:
       - "3300:3000"
+    depends_on:
+      - db
   volumes:
     db-data:
   # pgadmin:
